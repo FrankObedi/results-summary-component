@@ -21,7 +21,7 @@ export default function Summary() {
               </div>
 
               <p className="category-score">
-                <b>{score}</b>&nbsp; / 100
+                <span>{score}</span>&nbsp; / 100
               </p>
             </div>
           );

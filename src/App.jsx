@@ -7,9 +7,11 @@ function App() {
 
   return (
     <>
-      <main className="result-summary">
-        <Results />
-        <Summary />
+      <main>
+        <div className="result-summary">
+          <Results />
+          <Summary />
+        </div>
         <div className="attribution">
           Challenge by{" "}
           <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
