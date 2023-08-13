@@ -1,0 +1,216 @@
+@font-face {
+  font-family: "HankenGrotesk";
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(../public/assets/fonts/HankenGrotesk.ttf) format("truetype");
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+img svg {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+:root {
+  /* Primary */
+  --light-red: 0, 100%, 67%;
+  --yellow: 39, 100%, 56%;
+  --green: 166, 100%, 37%;
+  --light-blue: 234, 85%, 60%;
+  --black: hsl(0, 0%, 0%);
+
+  /*--- Gradients ---*/
+  /* Background */
+  --light-slate-blue: hsl(252, 100%, 67%);
+  --lightlroyallblue: hsl(241, 81%, 54%);
+
+  /* Circle */
+  --violet-blue: hsla(256, 72%, 46%, 1);
+  --persian-blue: hsla(241, 72%, 46%, 0);
+
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --text-primary: hsl(241, 100%, 89%);
+  --text-faded: hsla(241, 100%, 89%, 0.5);
+  --dark-gray-blue: hsl(224, 30%, 27%);
+
+  --dark-blue: hsl(234, 85%, 15%);
+
+  --gradient-primary: linear-gradient(
+    var(--light-slate-blue),
+    var(--lightlroyallblue)
+  );
+
+  --gradient-secondary: linear-gradient(
+    var(--violet-blue),
+    var(--persian-blue)
+  );
+
+  /* Font Weights */
+  --fw-regular: 500;
+  --fw-medium: 700;
+  --fw-bold: 800;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: HankenGrotesk;
+  color: var(--text-primary);
+}
+
+/* utilities */
+.grid-flow {
+  display: grid;
+  gap: 0.875rem;
+  align-content: start;
+}
+
+.grid-flow[data-spacing="large"] {
+  gap: 1.5rem;
+}
+
+/* parent tyles */
+.result-summary {
+  --padding: 1.2rem 2.5rem 2.2rem 2.5rem;
+}
+
+.results,
+.summary {
+  padding: var(--padding);
+}
+
+/* -- result section styles -- */
+.results {
+  background: var(--gradient-primary);
+  border-radius: 0 0 1.7rem 1.7rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.result-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.result-score {
+  background: var(--gradient-secondary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0;
+  width: 9rem;
+  height: 9rem;
+  margin: 0 auto;
+  color: var(--text-faded);
+}
+
+.result-score span {
+  font-size: 3.4rem;
+  font-weight: var(--fw-bold);
+  color: var(--white);
+}
+
+.ranking-title {
+  color: var(--white);
+  font-weight: var(--fw-regular);
+  font-size: 1.5rem;
+}
+
+/* -- summary section styles -- */
+
+summary {
+  background: var(--white);
+}
+
+.summary-title {
+  color: var(--dark-blue);
+  font-size: 1.2rem;
+}
+
+/* categories */
+.summery-category,
+.flex-left-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.summery-category {
+  justify-content: space-between;
+  background: hsla(var(--category-color), 0.05);
+  padding: 0.875rem;
+  border-radius: 0.5rem;
+}
+
+.category-title {
+  color: hsla(var(--category-color));
+}
+
+.summery-category[data-category="reaction"] {
+  --category-color: var(--light-red);
+}
+.summery-category[data-category="memory"] {
+  --category-color: var(--yellow);
+}
+.summery-category[data-category="verbal"] {
+  --category-color: var(--green);
+}
+.summery-category[data-category="visual"] {
+  --category-color: var(--light-blue);
+}
+
+/* category scores */
+.category-score {
+  color: gray;
+}
+
+.category-score {
+  color: var(--dark-blue);
+}
+
+/* button */
+.cta-btn {
+  background: var(--dark-blue);
+  color: var(--white);
+  padding: 1rem;
+  border-radius: 6rem;
+  font-size: 1.05rem;
+  font-weight: var(--fw-regular);
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.cta-btn:hover {
+  background: var(--gradient-primary);
+}
+
+.cta-btn:focus,
+a:focus {
+  outline: 2px solid var(--light-red);
+}
